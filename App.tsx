@@ -1,118 +1,86 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React from "react";
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
-  View,
-} from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+  
+}from 'react-native';
+//import BasicComponents from "./src/components/BasicComponents";
+//import TextInANest from "./src/components/TextComponents";
+//import TextInputExample from "./src/components/TextInputComponents";
+//import DisplayAnImage from "./src/components/ImageComponents";
+//import FlatListExample from "./src/components/FlatListComponents";
+//import Prensable from "./src/components/PressableComponents";
+//import UseStateComponents from "./src/components/UseState";
+//import ListmateriaComponents from "./src/components/Calificaciones";
+//import ListalumnosComponents from "./src/components/ListaAlumnos";
+import Home from "./src/react-native-elements/Home";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AvatarBasic from "./src/react-native-elements/AvatarBasic";
+import BadgeComponent from "./src/react-native-elements/Badge";
+import Card from "./src/react-native-elements/Card";
+import CardComponent from "./src/react-native-elements/Card";
+import TabComponent from "./src/react-native-elements/Tab";
+import PropsEjemplo from "./src/navegacion/PropsEjemplo";
+import AxiosEjemplo from "./src/navegacion/AxiosEjemplo";
+import AsyncStorageEjemplo from "./src/navegacion/AsyncStorageEjemplo";
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+import Componente01 from "./src/simulacro-parcial/Componente01";
+import Axios03 from "./src/simulacro-parcial/Axios03";
+import Props02 from "./src/simulacro-parcial/Props02";
+import AsyncStorage04 from "./src/simulacro-parcial/AsyncStorage04";
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+const Stack = createNativeStackNavigator();
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+const App = () => {
 
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
+  return(
+    <SafeAreaView style={styles.safeArea}>
+      
+       {/*<BasicComponents></BasicComponents>
+     <TextInANest></TextInANest>
+     <TextInputExample></TextInputExample>
+     <DisplayAnImage></DisplayAnImage>
+     <FlatListExample></FlatListExample>
+     <Prensable></Prensable>
+     <UseStateComponents></UseStateComponents>
+     <ListmateriaComponents></ListmateriaComponents>
+     <ListalumnosComponents></ListalumnosComponents>
+         <Stack.Screen name="Home" component={Home} />
+         <Stack.Screen name="Notas" component={Home}></Stack.Screen>
+         <Stack.Screen name="Avatar"  component={AvatarBasic}></Stack.Screen>
+         <Stack.Screen name="Badge"  component={BadgeComponent}></Stack.Screen>
+         <Stack.Screen name="Card" component={CardComponent}></Stack.Screen>
+         <Stack.Screen name="Tab" component={TabComponent}></Stack.Screen>
+         <Stack.Screen name = "Props" component={PropsEjemplo}></Stack.Screen>
+         <Stack.Screen name= "Axios" component={AxiosEjemplo}></Stack.Screen>
+         <Stack.Screen name= "Async" component={AsyncStorageEjemplo}></Stack.Screen>
+     */}
+     <NavigationContainer>
+       <Stack.Navigator initialRouteName="Componente01">
+       <Stack.Screen name="Componente01" component={Componente01} />
+          <Stack.Screen name="Props02" component={Props02} />
+          <Stack.Screen name="Axios03" component={Axios03} />
+          <Stack.Screen name="AsyncStorage04" component={AsyncStorage04} />
+
+       </Stack.Navigator>
+     </NavigationContainer>
+     
+
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
+  safeArea: {
+    flex: 1,
+    backgroundColor: 'white', // Asegúrate de que el fondo sea visible
   },
 });
+
 
 export default App;
