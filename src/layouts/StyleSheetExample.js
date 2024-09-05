@@ -10,6 +10,7 @@ const StyleSheetExample = () => {
   
   
     )
+    
   }
   
   const styles = StyleSheet.create({
