@@ -7,6 +7,7 @@ const BasicComponents = () => {
     <ScrollView style={styles.scrollView}>
       {/* Contenedor con capacidad de desplazamiento vertical. */}
       
+      
       <Text>Ingresando varios componentes aquí...</Text>
       {/* Texto simple para mostrar un mensaje. */}
       
